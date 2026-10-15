@@ -9,18 +9,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg: #070709;
-            --card-bg: #121218;
-            --surface: #1a1a24;
-            --border: rgba(255, 255, 255, 0.08);
+            --bg: #050505;
+            --card-bg: #0f0f12;
+            --surface: #18181c;
+            --border: rgba(245, 158, 11, 0.15);
+            --border-hover: rgba(245, 158, 11, 0.5);
             --text: #ffffff;
-            --muted: #9494a0;
-            --purple: #7928ca;
-            --pink: #eb367f;
-            --blue: #0070f3;
-            --whatsapp: #25d366;
-            --linkedin: #0a66c2;
-            --gradient: linear-gradient(135deg, #7928ca 0%, #eb367f 50%, #0070f3 100%);
+            --muted: #a1a1aa;
+            --primary: #f59e0b;
+            --primary-light: #fbbf24;
+            --gradient: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
         }
 
         * {
@@ -37,8 +35,8 @@
             line-height: 1.6;
             overflow-x: hidden;
             background-image: 
-                radial-gradient(circle at 10% 10%, rgba(121, 40, 202, 0.12) 0%, transparent 40%),
-                radial-gradient(circle at 90% 90%, rgba(235, 54, 127, 0.1) 0%, transparent 40%);
+                radial-gradient(circle at 10% 10%, rgba(245, 158, 11, 0.07) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(217, 119, 6, 0.05) 0%, transparent 40%);
         }
 
         header {
@@ -46,8 +44,8 @@
             top: 0;
             left: 0;
             right: 0;
-            height: 70px;
-            background: rgba(7, 7, 9, 0.85);
+            height: 75px;
+            background: rgba(5, 5, 5, 0.9);
             backdrop-filter: blur(15px);
             border-bottom: 1px solid var(--border);
             display: flex;
@@ -58,24 +56,23 @@
         }
 
         .logo {
-            font-size: 1.2rem;
-            font-weight: 800;
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 1.3rem;
+            font-weight: 900;
+            color: var(--primary);
+            letter-spacing: -0.5px;
         }
 
         nav a {
             color: var(--muted);
             text-decoration: none;
-            margin-left: 20px;
-            font-size: 0.85rem;
+            margin-left: 24px;
+            font-size: 0.9rem;
             font-weight: 600;
             transition: 0.2s;
         }
 
         nav a:hover {
-            color: var(--text);
+            color: var(--primary);
         }
 
         .hero {
@@ -85,38 +82,36 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            padding: 120px 20px 60px;
+            padding: 130px 20px 60px;
         }
 
         .hero-badge {
-            background: rgba(121, 40, 202, 0.15);
-            border: 1px solid rgba(121, 40, 202, 0.4);
-            color: #d8b4fe;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 0.8rem;
+            background: rgba(245, 158, 11, 0.1);
+            border: 1px solid rgba(245, 158, 11, 0.3);
+            color: var(--primary-light);
+            padding: 6px 18px;
+            border-radius: 30px;
+            font-size: 0.82rem;
             font-weight: 700;
-            margin-bottom: 20px;
+            margin-bottom: 22px;
         }
 
         .hero h1 {
-            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-size: clamp(2.3rem, 5vw, 4rem);
             font-weight: 900;
             margin-bottom: 16px;
             letter-spacing: -1px;
         }
 
         .hero h1 span {
-            background: var(--gradient);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            color: var(--primary);
         }
 
         .hero p {
-            max-width: 650px;
+            max-width: 680px;
             color: var(--muted);
             font-size: 1.05rem;
-            margin-bottom: 30px;
+            margin-bottom: 35px;
         }
 
         .btn-group {
@@ -128,13 +123,13 @@
 
         .btn {
             background: var(--gradient);
-            color: #fff;
-            padding: 12px 26px;
-            border-radius: 14px;
+            color: #000;
+            padding: 12px 28px;
+            border-radius: 12px;
             text-decoration: none;
-            font-weight: 700;
+            font-weight: 800;
             font-size: 0.9rem;
-            box-shadow: 0 8px 25px rgba(121, 40, 202, 0.35);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.25);
             transition: 0.2s;
             display: inline-flex;
             align-items: center;
@@ -143,44 +138,63 @@
 
         .btn:hover {
             transform: translateY(-2px);
-            opacity: 0.95;
+            opacity: 0.92;
+        }
+
+        .btn-outline {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            box-shadow: none;
+        }
+        
+        .btn-outline:hover {
+            border-color: var(--primary);
+            color: var(--primary);
         }
 
         .btn-wa {
-            background: rgba(37, 211, 102, 0.15);
-            border: 1px solid rgba(37, 211, 102, 0.4);
+            background: rgba(37, 211, 102, 0.12);
+            border: 1px solid rgba(37, 211, 102, 0.35);
             color: #25d366;
+            box-shadow: none;
         }
 
         .btn-li {
-            background: rgba(10, 102, 194, 0.15);
-            border: 1px solid rgba(10, 102, 194, 0.4);
+            background: rgba(10, 102, 194, 0.12);
+            border: 1px solid rgba(10, 102, 194, 0.35);
             color: #0a66c2;
+            box-shadow: none;
         }
 
         .container {
-            max-width: 1100px;
+            max-width: 1150px;
             margin: 0 auto;
             padding: 80px 20px;
         }
 
         .section-title {
-            font-size: 2rem;
-            font-weight: 800;
-            margin-bottom: 40px;
+            font-size: 2.2rem;
+            font-weight: 900;
+            margin-bottom: 45px;
             text-align: center;
+            letter-spacing: -0.5px;
+        }
+
+        .section-title span {
+            color: var(--primary);
         }
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 24px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 28px;
         }
 
         .project-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 24px;
+            border-radius: 20px;
             overflow: hidden;
             transition: 0.3s;
             display: flex;
@@ -189,14 +203,14 @@
         }
 
         .project-card:hover {
-            border-color: var(--purple);
-            transform: translateY(-5px);
-            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+            border-color: var(--border-hover);
+            transform: translateY(-6px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
         }
 
         .project-img {
             height: 160px;
-            background: linear-gradient(135deg, #1a1a24, #121218);
+            background: linear-gradient(135deg, #141418, #0a0a0d);
             display: flex;
             align-items: center;
             justify-content: center;
@@ -205,19 +219,21 @@
         }
 
         .project-content {
-            padding: 24px;
+            padding: 26px;
         }
 
         .project-content h3 {
-            font-size: 1.2rem;
+            font-size: 1.25rem;
             font-weight: 800;
             margin-bottom: 10px;
+            color: #fff;
         }
 
         .project-content p {
             color: var(--muted);
-            font-size: 0.88rem;
+            font-size: 0.9rem;
             margin-bottom: 20px;
+            line-height: 1.7;
         }
 
         .tags {
@@ -229,11 +245,12 @@
 
         .tag {
             background: var(--surface);
-            color: #d8b4fe;
-            font-size: 0.72rem;
-            font-weight: 600;
-            padding: 4px 10px;
-            border-radius: 8px;
+            color: var(--primary-light);
+            font-size: 0.75rem;
+            font-weight: 700;
+            padding: 4px 12px;
+            border-radius: 6px;
+            border: 1px solid rgba(245, 158, 11, 0.1);
         }
 
         .contact-section {
@@ -241,8 +258,8 @@
             background: var(--card-bg);
             border: 1px solid var(--border);
             border-radius: 24px;
-            padding: 50px 20px;
-            margin-top: 50px;
+            padding: 60px 20px;
+            margin-top: 60px;
         }
 
         footer {
@@ -251,6 +268,7 @@
             border-top: 1px solid var(--border);
             color: var(--muted);
             font-size: 0.85rem;
+            margin-top: 40px;
         }
     </style>
 </head>
@@ -267,7 +285,7 @@
     <section class="hero">
         <div class="hero-badge">✨ UI/UX Designer & Digital Creator</div>
         <h1>عەبدولباست شوان کەریم <span>دیزاینر و پەرەپێدەر</span></h1>
-        <p>شارەزا لە دیزاینی گرافیک، مۆنتاری ڤیدیۆ، دروستکردنی ئەزموونی بەکارهێنەر (UI/UX) و پەرەپێدانی ئەپ و ئامرازە زیرەکەکان.</p>
+        <p>شارەزا لە دیزاینی گرافیک، مۆنتاری ڤیدیۆ، دروستکردنی ئەزموونی بەکارهێنەر (UI/UX) و پەرەپێدانی پڕۆژە مۆدێرنەکان.</p>
         <div class="btn-group">
             <a href="#projects" class="btn">بینینی پڕۆژەکان</a>
             <a href="https://wa.me/9647503868982" target="_blank" class="btn btn-wa">💬 واتسئەپ</a>
@@ -276,10 +294,10 @@
     </section>
 
     <div class="container" id="projects">
-        <h2 class="section-title">کار و پڕۆژە داهێنەرەکانم</h2>
+        <h2 class="section-title">کار و پڕۆژە <span>دایهێنەرەکانم</span></h2>
         <div class="projects-grid">
             
-            <!-- پڕۆژەی یەکەم -->
+            <!-- ١. ئەپی Abdulbasit Editor -->
             <div class="project-card">
                 <div>
                     <div class="project-img">🎨</div>
@@ -289,35 +307,53 @@
                         <div class="tags">
                             <span class="tag">UI/UX</span>
                             <span class="tag">Capacitor</span>
-                            <span class="tag">GitHub Actions</span>
+                            <span class="tag">APK</span>
                         </div>
                     </div>
                 </div>
-                <div style="padding: 0 24px 24px 24px;">
-                    <a href="https://github.com/abdulbasitshwankareem-ux/abdulbasit-editor" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.8rem; width: 100%; justify-content: center;">گیتھابی ئەپەکە ↗</a>
+                <div style="padding: 0 26px 26px 26px;">
+                    <a href="https://github.com/abdulbasitshwankareem-ux/abdulbasit-editor" target="_blank" class="btn" style="width: 100%; justify-content: center;">گیتھابی ئەپەکە ↗</a>
                 </div>
             </div>
 
-            <!-- پڕۆژەی دووەم - ئەپی زانیاری AI -->
+            <!-- ٢. پڕۆژەی Real Estate Web App -->
+            <div class="project-card">
+                <div>
+                    <div class="project-img">🏢</div>
+                    <div class="project-content">
+                        <h3>Real Estate Web App</h3>
+                        <p>وێبسایتی مۆدێرن و ناوازە بۆ کەرتی خانووبەرە، دیزاینکراو بە ستایلێکی پێشکەوتووی بەکارهێنەرپه‌سەند.</p>
+                        <div class="tags">
+                            <span class="tag">Web Design</span>
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Live Demo</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 0 26px 26px 26px;">
+                    <a href="https://real-estate-web-appl-41pk.bolt.host/" target="_blank" class="btn" style="width: 100%; justify-content: center;">بینینی ڕاستەوخۆ ↗</a>
+                </div>
+            </div>
+
+            <!-- ٣. ئەپی زانیاری AI -->
             <div class="project-card">
                 <div>
                     <div class="project-img">🤖</div>
                     <div class="project-content">
                         <h3>أەپی زانیارییەکانی AI</h3>
-                        <p>ئەپێکی ئۆتۆماتیک کە ڕۆژانە نوێترین زانیاری و فێرکارییەکانی زیرەکی دەستکرد (AI) بەخۆڕایی پێشکەش دەکات.</p>
+                        <p>سیستەم و ئەپێکی ئۆتۆماتیک کە ڕۆژانە نوێترین زانیاری و فێرکارییەکانی زیرەکی دەستکرد پێشکەش دەکات.</p>
                         <div class="tags">
                             <span class="tag">AI System</span>
                             <span class="tag">Automation</span>
-                            <span class="tag">Mobile App</span>
                         </div>
                     </div>
                 </div>
-                <div style="padding: 0 24px 24px 24px;">
-                    <a href="https://github.com/abdulbasitshwankareem-ux" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.8rem; width: 100%; justify-content: center;">بینینی پڕۆژەکان ↗</a>
+                <div style="padding: 0 26px 26px 26px;">
+                    <a href="https://github.com/abdulbasitshwankareem-ux" target="_blank" class="btn btn-outline" style="width: 100%; justify-content: center;">بینینی پڕۆژەکان ↗</a>
                 </div>
             </div>
 
-            <!-- پڕۆژەی سێیەم - گرافیک و ڤیدیۆ -->
+            <!-- ٤. دیزاینی گرافیک و ڤیدیۆ -->
             <div class="project-card">
                 <div>
                     <div class="project-img">🎬</div>
@@ -331,16 +367,16 @@
                         </div>
                     </div>
                 </div>
-                <div style="padding: 0 24px 24px 24px;">
-                    <a href="https://wa.me/9647503868982" target="_blank" class="btn btn-wa" style="padding: 8px 16px; font-size: 0.8rem; width: 100%; justify-content: center;">داواکاری دیزاین 💬</a>
+                <div style="padding: 0 26px 26px 26px;">
+                    <a href="https://wa.me/9647503868982" target="_blank" class="btn btn-wa" style="width: 100%; justify-content: center;">داواکاری دیزاین 💬</a>
                 </div>
             </div>
 
         </div>
 
         <div class="contact-section" id="contact">
-            <h2 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 12px;">پەیوەندیم پێوە بکە</h2>
-            <p style="color: var(--muted); margin-bottom: 24px; font-size: 0.95rem;">ئامادەم بۆ کارکردن لە پڕۆژەکانی داهاتوودا، فریلانس و پڕۆژەی هاوبەش.</p>
+            <h2 style="font-size: 1.8rem; font-weight: 900; margin-bottom: 12px;">پەیوەندیم پێوە بکە</h2>
+            <p style="color: var(--muted); margin-bottom: 28px; font-size: 0.98rem;">ئامادەم بۆ کارکردن لە پڕۆژەکانی داهاتوودا، فریلانس و هاوکاریکردن لە براندەکاندا.</p>
             <div class="btn-group">
                 <a href="https://wa.me/9647503868982" target="_blank" class="btn btn-wa">💬 نامە ناردن لە واتسئەپ</a>
                 <a href="https://www.linkedin.com/in/abdulbasit-shwan-kareem-a0a546305" target="_blank" class="btn btn-li">💼 سەردانی لینکئین</a>
