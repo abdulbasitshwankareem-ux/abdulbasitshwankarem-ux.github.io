@@ -1,118 +1,331 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html>
+<html lang="ku" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#080807">
-  <meta name="description" content="AK Digital Craft — Web & Mobile App Developer, Graphic & Video Designer, AI Solutions Creator based in Erbil, Iraq.">
-  <title>AK Digital Craft — Built to Move</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Abdulbasit Shwan Kareem | UI/UX Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #070709;
+            --card-bg: #121218;
+            --surface: #1a1a24;
+            --border: rgba(255, 255, 255, 0.08);
+            --text: #ffffff;
+            --muted: #9494a0;
+            --purple: #7928ca;
+            --pink: #eb367f;
+            --blue: #0070f3;
+            --whatsapp: #25d366;
+            --linkedin: #0a66c2;
+            --gradient: linear-gradient(135deg, #7928ca 0%, #eb367f 50%, #0070f3 100%);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Vazirmatn', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 10% 10%, rgba(121, 40, 202, 0.12) 0%, transparent 40%),
+                radial-gradient(circle at 90% 90%, rgba(235, 54, 127, 0.1) 0%, transparent 40%);
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(7, 7, 9, 0.85);
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--border);
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 5%;
+            z-index: 1000;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav a {
+            color: var(--muted);
+            text-decoration: none;
+            margin-left: 20px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        nav a:hover {
+            color: var(--text);
+        }
+
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 120px 20px 60px;
+        }
+
+        .hero-badge {
+            background: rgba(121, 40, 202, 0.15);
+            border: 1px solid rgba(121, 40, 202, 0.4);
+            color: #d8b4fe;
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 900;
+            margin-bottom: 16px;
+            letter-spacing: -1px;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            max-width: 600px;
+            color: var(--muted);
+            font-size: 1.05rem;
+            margin-bottom: 30px;
+        }
+
+        .btn-group {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .btn {
+            background: var(--gradient);
+            color: #fff;
+            padding: 12px 26px;
+            border-radius: 14px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.9rem;
+            box-shadow: 0 8px 25px rgba(121, 40, 202, 0.35);
+            transition: 0.2s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            opacity: 0.95;
+        }
+
+        .btn-outline {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            color: var(--text);
+            box-shadow: none;
+        }
+
+        .btn-wa {
+            background: rgba(37, 211, 102, 0.15);
+            border: 1px solid rgba(37, 211, 102, 0.4);
+            color: #25d366;
+        }
+
+        .btn-li {
+            background: rgba(10, 102, 194, 0.15);
+            border: 1px solid rgba(10, 102, 194, 0.4);
+            color: #0a66c2;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 800;
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            overflow: hidden;
+            transition: 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--purple);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-img {
+            height: 180px;
+            background: linear-gradient(135deg, #1a1a24, #121218);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-content {
+            padding: 24px;
+        }
+
+        .project-content h3 {
+            font-size: 1.25rem;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .project-content p {
+            color: var(--muted);
+            font-size: 0.9rem;
+            margin-bottom: 20px;
+        }
+
+        .tags {
+            display: flex;
+            gap: 8px;
+            flex-wrap: wrap;
+            margin-bottom: 20px;
+        }
+
+        .tag {
+            background: var(--surface);
+            color: #d8b4fe;
+            font-size: 0.75rem;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 8px;
+        }
+
+        .contact-section {
+            text-align: center;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            padding: 50px 20px;
+            margin-top: 40px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 20px;
+            border-top: 1px solid var(--border);
+            color: var(--muted);
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 <body>
-  <header class="topbar">
-    <a class="wordmark" href="#home" aria-label="AK Digital Craft home"><span>AK</span><small>DIGITAL CRAFT</small></a>
-    <button class="menu-toggle" aria-label="Open navigation" aria-expanded="false">☰</button>
-    <nav class="nav">
-      <a href="#point-of-view">Point of view</a>
-      <a href="#services">Services</a>
-      <a href="#toolkit">Toolkit</a>
-      <a href="#work">Selected work</a>
-      <a href="#contact" class="nav-contact">Let's talk <span>↗</span></a>
-    </nav>
-  </header>
 
-  <main>
-    <section class="hero section" id="home">
-      <div class="hero-art" aria-hidden="true">
-        <div class="art-platform"></div>
-        <div class="gold-ring"></div>
-        <div class="art-glow"></div>
-      </div>
-      <div class="hero-card">
-        <p class="eyebrow">ABDULBASIT SHWAN KAREEM <span>·</span> PORTFOLIO</p>
-        <div class="hero-title-row">
-          <span class="monogram">AK</span>
-          <h1>Digital Craft,<br><em>Built to Move</em></h1>
+    <header>
+        <div class="logo">Abdulbasit.UX</div>
+        <nav>
+            <a href="#projects">پڕۆژەکان</a>
+            <a href="#contact">پەیوەندی</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-badge">✨ UI/UX Designer & Digital Creator</div>
+        <h1>عەبدولباست شوان کەریم <span>دیزاینر و پەرەپێدەر</span></h1>
+        <p>شارەزا لە دروستکردنی ئەزموونی بەکارهێنەر، دیزاینی داهێنەرانە، و پەرەپێدانی پڕۆژەی ڕاستەقینە بۆ مۆبایل و وێب.</p>
+        <div class="btn-group">
+            <a href="#projects" class="btn">بینینی پڕۆژەکان</a>
+            <a href="https://wa.me/9647503868982" target="_blank" class="btn btn-wa">💬 واتسئەپ</a>
+            <a href="https://www.linkedin.com/in/abdulbasit-shwan-kareem-a0a546305" target="_blank" class="btn btn-li">💼 لینکئین</a>
         </div>
-        <div class="hero-roles">
-          <p>WEB &amp; MOBILE APP DEVELOPER</p>
-          <p>GRAPHIC &amp; VIDEO DESIGNER</p>
-          <p>AI SOLUTIONS CREATOR</p>
+    </section>
+
+    <div class="container" id="projects">
+        <h2 class="section-title">پڕۆژە دیارەکان</h2>
+        <div class="projects-grid">
+            
+            <div class="project-card">
+                <div class="project-img">🎨</div>
+                <div class="project-content">
+                    <h3>Abdulbasit Editor</h3>
+                    <p>ئەپێکی پێشکەوتووی دەستکاری وێنە و ڤیدیۆ بە AI، پاکێجکراو و ئامادەکراو بۆ مۆبایلی ئاندروید (Honor X9d).</p>
+                    <div class="tags">
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">Capacitor</span>
+                        <span class="tag">GitHub Actions</span>
+                    </div>
+                    <a href="https://github.com/abdulbasitshwankareem-ux/abdulbasit-editor" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.8rem;">گیتھابی ئەپەکە ↗</a>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-img">🏠</div>
+                <div class="project-content">
+                    <h3>Real Estate Web App</h3>
+                    <p>وێبسایتی مۆدێرن بۆ کەرتی خانووبەرە بە دیزاینێکی سەرنجڕاکێش و بەکارهێنەرپه‌سەند.</p>
+                    <div class="tags">
+                        <span class="tag">Web Design</span>
+                        <span class="tag">UI/UX</span>
+                        <span class="tag">Live Demo</span>
+                    </div>
+                    <a href="https://real-estate-web-appl-41pk.bolt.host/" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.8rem;">بینینی ڕاستەوخۆ ↗</a>
+                </div>
+            </div>
+
         </div>
-        <div class="gold-rule"></div>
-        <p class="location">ERBIL <span>·</span> IRAQ</p>
-      </div>
-      <a class="scroll-note" href="#point-of-view">SCROLL TO EXPLORE <span>↓</span></a>
-    </section>
 
-    <section class="intro section" id="point-of-view">
-      <div class="section-label"><span>01</span> POINT OF VIEW</div>
-      <div class="intro-content">
-        <h2>Technology<br>with a <em>point</em><br>of view.</h2>
-        <div class="intro-copy">
-          <p class="lead">AK turns ideas into useful, memorable digital experiences by blending code, design, motion, and practical AI.</p>
-          <div class="intro-facts">
-            <p><span class="tiny-dot"></span> Based in Erbil, Iraq</p>
-            <p><span class="tiny-dot"></span> Built for ambitious people, products, and brands</p>
-          </div>
+        <div class="contact-section" id="contact">
+            <h2 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 12px;">پەیوەندیم پێوە بکە</h2>
+            <p style="color: var(--muted); margin-bottom: 24px; font-size: 0.95rem;">ئامادەم بۆ کارکردن لە پڕۆژەکانی داهاتوودا و هاوکاریکردن لە دیزاین و پەرەپێدان.</p>
+            <div class="btn-group">
+                <a href="https://wa.me/9647503868982" target="_blank" class="btn btn-wa">💬 نامە ناردن لە واتسئەپ</a>
+                <a href="https://www.linkedin.com/in/abdulbasit-shwan-kareem-a0a546305" target="_blank" class="btn btn-li">💼 سەردانی لینکئین</a>
+            </div>
         </div>
-      </div>
-    </section>
+    </div>
 
-    <section class="services section" id="services">
-      <div class="section-label"><span>02</span> SERVICES</div>
-      <div class="section-heading">
-        <h2>One creative partner,<br><em>four capabilities.</em></h2>
-        <p>From first idea to final delivery, the work stays connected.</p>
-      </div>
-      <div class="service-grid">
-        <article class="service-card"><span class="card-number">01 / BUILD</span><div class="line-icon">⌘</div><h3>Web &amp; mobile<br>app development</h3><p>Fast. Scalable. Future-ready.</p><span class="card-arrow">↗</span></article>
-        <article class="service-card"><span class="card-number">02 / DESIGN</span><div class="line-icon">✳</div><h3>Graphic &amp;<br>video design</h3><p>Visuals that communicate.</p><span class="card-arrow">↗</span></article>
-        <article class="service-card"><span class="card-number">03 / INTELLIGENCE</span><div class="line-icon">◎</div><h3>AI solutions and<br>workflow creation</h3><p>Smarter tools. Bigger possibilities.</p><span class="card-arrow">↗</span></article>
-        <article class="service-card"><span class="card-number">04 / DIRECTION</span><div class="line-icon">↗</div><h3>Creative<br>direction</h3><p>Clear decisions from idea to final delivery.</p><span class="card-arrow">↗</span></article>
-      </div>
-    </section>
+    <footer>
+        <p>&copy; 2026 Abdulbasit Shwan Kareem. هەموو مافەکان پارێزراون.</p>
+    </footer>
 
-    <section class="toolkit section" id="toolkit">
-      <div class="section-label"><span>03</span> THE TOOLKIT</div>
-      <div class="toolkit-layout">
-        <div><h2>Skills that move<br>from idea to<br><em>execution.</em></h2><p class="muted">A practical stack for making work clear, useful, and ready to ship.</p></div>
-        <div class="tool-list">
-          <article><div class="tool-icon">Ca</div><div><h3>Canva</h3><p>Branded visuals, social content, presentation design</p></div><span>↗</span></article>
-          <article><div class="tool-icon">Cp</div><div><h3>CapCut</h3><p>Short-form video, edits, motion-led storytelling</p></div><span>↗</span></article>
-          <article><div class="tool-icon">AI</div><div><h3>Google AI Studio</h3><p>AI prototyping, prompt design, and creative automation</p></div><span>↗</span></article>
-          <article><div class="tool-icon">⌘</div><div><h3>App Development</h3><p>Responsive web and mobile experiences</p></div><span>↗</span></article>
-        </div>
-      </div>
-    </section>
-
-    <section class="work section" id="work">
-      <div class="section-label"><span>04</span> SELECTED WORK</div>
-      <div class="work-heading"><h2>Selected work across<br><em>web, mobile, motion, and AI.</em></h2><p>A curated showcase of digital products, visual identities, social content, video edits, and AI-powered concepts.</p></div>
-      <div class="work-grid">
-        <article class="work-card work-web"><div class="work-visual visual-one"><span class="visual-label">DIGITAL / EXPERIENCE</span><div class="abstract-window"><i></i><i></i><i></i><div class="window-lines"></div></div></div><div class="work-meta"><span>WEB · MOBILE</span><span>01</span></div><h3>Digital products</h3></article>
-        <article class="work-card"><div class="work-visual visual-two"><span class="visual-label">IDENTITY / SYSTEM</span><div class="identity-mark">A<span>K</span></div><div class="identity-caption">FORM · FUNCTION · FEELING</div></div><div class="work-meta"><span>IDENTITY · SOCIAL</span><span>02</span></div><h3>Visual systems</h3></article>
-        <article class="work-card"><div class="work-visual visual-three"><span class="visual-label">MOTION / INTELLIGENCE</span><div class="motion-orb"></div><div class="motion-line"></div></div><div class="work-meta"><span>MOTION · AI</span><span>03</span></div><h3>Moving ideas forward</h3></article>
-      </div>
-      <p class="work-note">Portfolio categories shown as a curated overview. More project details can be added as work is published.</p>
-    </section>
-
-    <section class="process section">
-      <div class="section-label"><span>05</span> PROCESS</div>
-      <div class="process-layout"><h2>From first sketch<br>to something<br><em>people can use.</em></h2><div class="process-copy"><p>The work moves in clear stages, with room for sharp thinking and thoughtful refinement.</p><ol><li><span>01</span> Clarify the goal, audience, and opportunity</li><li><span>02</span> Shape the idea through structure, visuals, and prototypes</li><li><span>03</span> Build, refine, and deliver a polished result</li></ol><p class="process-signoff">Clarity first. Craft throughout.</p></div></div>
-    </section>
-
-    <section class="standard section">
-      <div class="section-label"><span>06</span> THE STANDARD</div>
-      <div class="standard-content"><p class="eyebrow">BUILT WITH INTENTION</p><h2>Designed to be useful.<br><em>Made to be remembered.</em></h2><p>Whether the brief starts with a product, a brand, a video, or a problem, AK brings clarity and craft to the work.</p><div class="standard-orbit" aria-hidden="true"><span>AK</span></div></div>
-    </section>
-
-    <section class="contact section" id="contact">
-      <div class="section-label"><span>07</span> CONTACT · LET'S CONNECT</div>
-      <div class="contact-layout"><div><p class="eyebrow">HAVE SOMETHING IN MIND?</p><h2>Let's build<br>something worth<br><em>remembering.</em></h2></div><div class="contact-copy"><p>Have a project, idea, or collaboration in mind? Reach out to AK in Erbil and start the conversation.</p><a class="email-link" href="mailto:hello@ak.dev">hello@ak.dev <span>↗</span></a><div class="social-links"><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer">LinkedIn ↗</a><a href="https://www.instagram.com/abdulbasit-shwan/" target="_blank" rel="noreferrer">Instagram ↗</a></div><p class="handle">@abdulbasit-shwan</p></div></div>
-      <footer><a href="#home" class="footer-brand">AK<span> DIGITAL CRAFT</span></a><p>ERBIL · IRAQ</p><a href="#home">BACK TO TOP ↑</a></footer>
-    </section>
-  </main>
-  <script src="script.js"></script>
 </body>
 </html>
