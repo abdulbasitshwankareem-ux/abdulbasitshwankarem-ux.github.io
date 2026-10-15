@@ -113,7 +113,7 @@
         }
 
         .hero p {
-            max-width: 600px;
+            max-width: 650px;
             color: var(--muted);
             font-size: 1.05rem;
             margin-bottom: 30px;
@@ -146,13 +146,6 @@
             opacity: 0.95;
         }
 
-        .btn-outline {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            color: var(--text);
-            box-shadow: none;
-        }
-
         .btn-wa {
             background: rgba(37, 211, 102, 0.15);
             border: 1px solid rgba(37, 211, 102, 0.4);
@@ -180,7 +173,7 @@
 
         .projects-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 24px;
         }
 
@@ -190,6 +183,9 @@
             border-radius: 24px;
             overflow: hidden;
             transition: 0.3s;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
         .project-card:hover {
@@ -199,7 +195,7 @@
         }
 
         .project-img {
-            height: 180px;
+            height: 160px;
             background: linear-gradient(135deg, #1a1a24, #121218);
             display: flex;
             align-items: center;
@@ -213,14 +209,14 @@
         }
 
         .project-content h3 {
-            font-size: 1.25rem;
+            font-size: 1.2rem;
             font-weight: 800;
             margin-bottom: 10px;
         }
 
         .project-content p {
             color: var(--muted);
-            font-size: 0.9rem;
+            font-size: 0.88rem;
             margin-bottom: 20px;
         }
 
@@ -234,7 +230,7 @@
         .tag {
             background: var(--surface);
             color: #d8b4fe;
-            font-size: 0.75rem;
+            font-size: 0.72rem;
             font-weight: 600;
             padding: 4px 10px;
             border-radius: 8px;
@@ -246,7 +242,7 @@
             border: 1px solid var(--border);
             border-radius: 24px;
             padding: 50px 20px;
-            margin-top: 40px;
+            margin-top: 50px;
         }
 
         footer {
@@ -271,7 +267,7 @@
     <section class="hero">
         <div class="hero-badge">✨ UI/UX Designer & Digital Creator</div>
         <h1>عەبدولباست شوان کەریم <span>دیزاینر و پەرەپێدەر</span></h1>
-        <p>شارەزا لە دروستکردنی ئەزموونی بەکارهێنەر، دیزاینی داهێنەرانە، و پەرەپێدانی پڕۆژەی ڕاستەقینە بۆ مۆبایل و وێب.</p>
+        <p>شارەزا لە دیزاینی گرافیک، مۆنتاری ڤیدیۆ، دروستکردنی ئەزموونی بەکارهێنەر (UI/UX) و پەرەپێدانی ئەپ و ئامرازە زیرەکەکان.</p>
         <div class="btn-group">
             <a href="#projects" class="btn">بینینی پڕۆژەکان</a>
             <a href="https://wa.me/9647503868982" target="_blank" class="btn btn-wa">💬 واتسئەپ</a>
@@ -280,34 +276,63 @@
     </section>
 
     <div class="container" id="projects">
-        <h2 class="section-title">پڕۆژە دیارەکان</h2>
+        <h2 class="section-title">کار و پڕۆژە داهێنەرەکانم</h2>
         <div class="projects-grid">
             
+            <!-- پڕۆژەی یەکەم -->
             <div class="project-card">
-                <div class="project-img">🎨</div>
-                <div class="project-content">
-                    <h3>Abdulbasit Editor</h3>
-                    <p>ئەپێکی پێشکەوتووی دەستکاری وێنە و ڤیدیۆ بە AI، پاکێجکراو و ئامادەکراو بۆ مۆبایلی ئاندروید (Honor X9d).</p>
-                    <div class="tags">
-                        <span class="tag">UI/UX</span>
-                        <span class="tag">Capacitor</span>
-                        <span class="tag">GitHub Actions</span>
+                <div>
+                    <div class="project-img">🎨</div>
+                    <div class="project-content">
+                        <h3>Abdulbasit Editor</h3>
+                        <p>ئەپێکی پێشکەوتووی دەستکاری وێنە و ڤیدیۆ بە AI، پاکێجکراو و ئامادەکراو بۆ مۆبایلی ئاندروید (Honor X9d).</p>
+                        <div class="tags">
+                            <span class="tag">UI/UX</span>
+                            <span class="tag">Capacitor</span>
+                            <span class="tag">GitHub Actions</span>
+                        </div>
                     </div>
-                    <a href="https://github.com/abdulbasitshwankareem-ux/abdulbasit-editor" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.8rem;">گیتھابی ئەپەکە ↗</a>
+                </div>
+                <div style="padding: 0 24px 24px 24px;">
+                    <a href="https://github.com/abdulbasitshwankareem-ux/abdulbasit-editor" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.8rem; width: 100%; justify-content: center;">گیتھابی ئەپەکە ↗</a>
                 </div>
             </div>
 
+            <!-- پڕۆژەی دووەم - ئەپی زانیاری AI -->
             <div class="project-card">
-                <div class="project-img">🏠</div>
-                <div class="project-content">
-                    <h3>Real Estate Web App</h3>
-                    <p>وێبسایتی مۆدێرن بۆ کەرتی خانووبەرە بە دیزاینێکی سەرنجڕاکێش و بەکارهێنەرپه‌سەند.</p>
-                    <div class="tags">
-                        <span class="tag">Web Design</span>
-                        <span class="tag">UI/UX</span>
-                        <span class="tag">Live Demo</span>
+                <div>
+                    <div class="project-img">🤖</div>
+                    <div class="project-content">
+                        <h3>أەپی زانیارییەکانی AI</h3>
+                        <p>ئەپێکی ئۆتۆماتیک کە ڕۆژانە نوێترین زانیاری و فێرکارییەکانی زیرەکی دەستکرد (AI) بەخۆڕایی پێشکەش دەکات.</p>
+                        <div class="tags">
+                            <span class="tag">AI System</span>
+                            <span class="tag">Automation</span>
+                            <span class="tag">Mobile App</span>
+                        </div>
                     </div>
-                    <a href="https://real-estate-web-appl-41pk.bolt.host/" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.8rem;">بینینی ڕاستەوخۆ ↗</a>
+                </div>
+                <div style="padding: 0 24px 24px 24px;">
+                    <a href="https://github.com/abdulbasitshwankareem-ux" target="_blank" class="btn" style="padding: 8px 16px; font-size: 0.8rem; width: 100%; justify-content: center;">بینینی پڕۆژەکان ↗</a>
+                </div>
+            </div>
+
+            <!-- پڕۆژەی سێیەم - گرافیک و ڤیدیۆ -->
+            <div class="project-card">
+                <div>
+                    <div class="project-img">🎬</div>
+                    <div class="project-content">
+                        <h3>دیزاینی گرافیک و مۆنتار</h3>
+                        <p>دیزاینکردنی پۆستەری ڕیکلامی پڕۆفیشناڵ، براندینگ و بەرهەمهێنانی ناوەڕۆکی ڤیدیۆیی کوالێتی بەرز.</p>
+                        <div class="tags">
+                            <span class="tag">Graphic Design</span>
+                            <span class="tag">Video Editing</span>
+                            <span class="tag">Branding</span>
+                        </div>
+                    </div>
+                </div>
+                <div style="padding: 0 24px 24px 24px;">
+                    <a href="https://wa.me/9647503868982" target="_blank" class="btn btn-wa" style="padding: 8px 16px; font-size: 0.8rem; width: 100%; justify-content: center;">داواکاری دیزاین 💬</a>
                 </div>
             </div>
 
@@ -315,7 +340,7 @@
 
         <div class="contact-section" id="contact">
             <h2 style="font-size: 1.6rem; font-weight: 800; margin-bottom: 12px;">پەیوەندیم پێوە بکە</h2>
-            <p style="color: var(--muted); margin-bottom: 24px; font-size: 0.95rem;">ئامادەم بۆ کارکردن لە پڕۆژەکانی داهاتوودا و هاوکاریکردن لە دیزاین و پەرەپێدان.</p>
+            <p style="color: var(--muted); margin-bottom: 24px; font-size: 0.95rem;">ئامادەم بۆ کارکردن لە پڕۆژەکانی داهاتوودا، فریلانس و پڕۆژەی هاوبەش.</p>
             <div class="btn-group">
                 <a href="https://wa.me/9647503868982" target="_blank" class="btn btn-wa">💬 نامە ناردن لە واتسئەپ</a>
                 <a href="https://www.linkedin.com/in/abdulbasit-shwan-kareem-a0a546305" target="_blank" class="btn btn-li">💼 سەردانی لینکئین</a>
